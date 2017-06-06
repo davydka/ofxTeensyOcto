@@ -33,6 +33,9 @@ public:
     int dataSize;
     bool simulate;
 
+	void setBrightness(int b){ brightness = (int) ofClamp(255 - b,0,255); }
+    int brightness;
+
     // translate the 24 bit color from RGB to the actual
     // order used by the LED wiring.  GRB is the most common.
     inline int colorWiring(int c)
