@@ -1,0 +1,11 @@
+bin/*
+!bin/data/
+
+obj/*
+.idea/*
+.DS_Store
+
+example/bin/*
+!example/bin/data/
+
+example/obj/*
