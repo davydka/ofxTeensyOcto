@@ -13,13 +13,6 @@ public:
     void image2data(ofImage image, unsigned char* data, bool layout);
     void draw(int x, int y);
 
-    void setBrightness(int b){ brightness = (int) ofClamp(b,0,255);}
-    void drawWhite();
-    void drawRainbowH();
-    void drawRainbowV();
-    void drawWaves();
-    void drawTestPattern();
-
     // arrays
     ofSerial * ledSerial;
     ofRectangle * ledArea;
