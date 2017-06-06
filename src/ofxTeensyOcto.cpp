@@ -1,12 +1,3 @@
-//
-//      OF Teensy/OCTO class by Jason Walters @ BBDO ...
-//      Original Processing/JS code by Paul Stoffregen/PJRC.COM
-//
-//      Last revision by Jason Walters on March 21st, 2014
-//      Made with openFrameworks 0.80
-//
-//--------------------------------------------------------------
-
 #include "ofxTeensyOcto.h"
 
 //--------------------------------------------------------------
@@ -20,10 +11,6 @@ void ofxTeensyOcto::setup(int _ledWidth, int _ledHeight, int _stripsPerPort, int
     numPorts = 0;                               // teensy ports counter
     maxPorts = 8;                               // max teensy ports
     simulate = false;                           // simulate the teensy buffers
-
-    waveSpeed = 0.05f;                          // animation speed
-    counterShape = 0;                           // init at zero
-    hue = 0;                                    // init color at red
 
     dataSize = ((ledWidth * (ledHeight * stripsPerPort)) * 3) + 3;
     
