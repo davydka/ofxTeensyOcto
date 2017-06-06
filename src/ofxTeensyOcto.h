@@ -33,13 +33,6 @@ public:
     int dataSize;
     bool simulate;
 
-    // demos
-    float waveSpeed;
-    int brightness;
-    float counterShape;
-    int hue;
-    
-
     // translate the 24 bit color from RGB to the actual
     // order used by the LED wiring.  GRB is the most common.
     inline int colorWiring(int c)

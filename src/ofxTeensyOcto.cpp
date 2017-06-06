@@ -21,7 +21,6 @@ void ofxTeensyOcto::setup(int _ledWidth, int _ledHeight, int _stripsPerPort, int
     maxPorts = 8;                               // max teensy ports
     simulate = false;                           // simulate the teensy buffers
 
-    brightness = 200;
     waveSpeed = 0.05f;                          // animation speed
     counterShape = 0;                           // init at zero
     hue = 0;                                    // init color at red
