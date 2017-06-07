@@ -12,7 +12,7 @@ void ofxTeensyOcto::setup(int _ledWidth, int _ledHeight, int _stripsPerPort, int
     maxPorts = 8;                               // max teensy ports
     simulate = false;                           // simulate the teensy buffers
 
-    brightness = 255;
+    brightness = 0.5;
 
     dataSize = ((ledWidth * (ledHeight * stripsPerPort)) * 3) + 3;
     
@@ -94,17 +94,7 @@ void ofxTeensyOcto::image2data(ofImage image, unsigned char* data, bool layout)
     
     // get the copied image pixels
     pixels2 = image.getPixels();
-    /*
-    for(int i = 0; i < image.getWidth() * image.getHeight() * 4; i++){
-        pixels2[i] += MIN(brightness, 255-pixels2[i]); //this makes sure it doesn't go over 255 as it will wrap to 0 otherwise.
-    }
-    */
-    int numPix = image.getWidth() * image.getHeight() * 3;
-	for(int i = 0; i < numPix;  i+=3){
-		 if(pixels2[i] != 0) pixels2[i] = pixels2[i] - brightness;
-		 if(pixels2[i+1] != 0) pixels2[i+1] = pixels2[i+1] - brightness;
-		 if(pixels2[i+2] != 0) pixels2[i+2] = pixels2[i+2] - brightness;
-	 }
+    pixels2.setNumChannels(3);
 
 
     // 2d array of our pixel colors
@@ -114,7 +104,7 @@ void ofxTeensyOcto::image2data(ofImage image, unsigned char* data, bool layout)
         {
             int loc = x + y * ledWidth;
             ofColor c = pixels2.getColor(x, y);
-            //c.setBrightness(brightness);
+            c *= brightness;
             colors[loc] = c;
             //colors[loc] = pixels2.getColor(x, y);
         }
