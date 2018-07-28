@@ -91,7 +91,7 @@ void ofxTeensyOcto::serialConfigure(string portName, float _xoffset, float _yoff
 // of 8.  The data array must be the proper size for the image.
 //--------------------------------------------------------------
 void ofxTeensyOcto::image2data(ofImage image, unsigned char* data, bool layout)
-{    
+{
 	int offset = 3;
 	int x, y, xbegin, xend, xinc, mask;
 	int linesPerPin = image.getHeight() / 8;
@@ -171,11 +171,11 @@ void ofxTeensyOcto::draw(int x, int y)
 			colors = pixels1.getColor(x, y);
 			ofSetColor(colors);
 			if(rowHeight == ledHeight)
-				ofTranslate(x*2, y*2 + (y/16*4)); //sections in groups
+				ofTranslate(x*16, y*16 + (y/16*4)); //sections in groups
 			else
-				ofTranslate(x*2, y*2);
+				ofTranslate(x*16, y*16);
 
-			ofDrawRectangle(x, y, 2, 2);
+			ofDrawRectangle(x, y, 16, 16);
 			ofPopMatrix();
 		}
 	}
